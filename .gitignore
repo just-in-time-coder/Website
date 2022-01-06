@@ -1,4 +1,5 @@
 
+
 # Created by https://www.gitignore.io/api/visualstudio
 # Edit at https://www.gitignore.io/?templates=visualstudio
 
@@ -14,6 +15,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.db
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -364,3 +366,5 @@ LocalTiaIntegration.user.props
 
 # mdlinterrules for vscode
 /.vscode/*.mdlinterrule
+#appsettings.json
+

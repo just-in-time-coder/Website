@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
+using Core.Entities;
+using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -7,10 +11,16 @@ namespace API.Controllers
     [Route("api/[Controller]")]
     public class ProductsController : ControllerBase
     {
-        [HttpGet]
-        public string GetProducts()
+        private readonly StoreContext m_StoreContext;
+
+        public ProductsController(StoreContext storeContext)
         {
-            return "These are products";
+            m_StoreContext = storeContext;
+        }
+        [HttpGet]
+        public ActionResult<IList<Product>> GetProducts()
+        {
+            return Ok(m_StoreContext.Products.ToList());
         }
 
         [HttpGet("{id}")]
